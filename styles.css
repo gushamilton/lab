@@ -42,10 +42,11 @@ body {
 .site-header nav ul {
     display: flex;
     justify-content: flex-end;
-    gap: 2rem;
+    gap: 1.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .site-header nav ul li a {
@@ -130,6 +131,39 @@ h2 {
     font-size: 1.1rem;
     color: var(--text-color);
     line-height: 1.7;
+    display: grid;
+    gap: 1rem;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.highlight-card {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    background: var(--white);
+}
+
+.highlight-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-color);
+}
+
+.highlight-card p {
+    color: var(--secondary-color);
+}
+
+.impact-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    font-size: 1.05rem;
+    color: var(--text-color);
 }
 
 /* Publications */
