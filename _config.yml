@@ -1,0 +1,8 @@
+title: "Dr Fergus Hamilton"
+description: "Academic profile, research highlights, and recent publications."
+baseurl: ""
+url: ""
+markdown: kramdown
+plugins:
+  - jekyll-feed
+theme: null
