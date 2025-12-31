@@ -1,73 +1,77 @@
+#!/usr/bin/env python3
+import argparse
+import datetime as dt
 import sys
-from pathlib import Path
+from typing import Any, Dict, List
 
 import yaml
-from scholarly import scholarly
+from scholarly import ProxyGenerator, scholarly
+
 
 AUTHOR_ID = "FPfGzxoAAAAJ"
-OUTPUT_PATH = Path("_data/publications.yml")
-MAX_PUBLICATIONS = 6
+DEFAULT_OUTPUT = "_data/publications.yml"
 
 
-def _coerce_year(value: str | None) -> int | None:
-    if not value:
-        return None
+def _best_url(pub: Dict[str, Any]) -> str:
+    return pub.get("pub_url") or pub.get("eprint_url") or ""
+
+
+def _normalize_pub(pub: Dict[str, Any]) -> Dict[str, Any]:
+    bib = pub.get("bib", {})
+    title = bib.get("title", "").strip()
+    venue = bib.get("venue", "").strip()
+    year = bib.get("year", "").strip()
+    url = _best_url(pub)
+    return {
+        "title": title,
+        "venue": venue,
+        "year": year,
+        "url": url,
+    }
+
+
+def _year_key(pub: Dict[str, Any]) -> int:
     try:
-        return int(value)
+        return int(pub.get("year") or 0)
     except ValueError:
-        return None
+        return 0
 
 
-def fetch_publications() -> list[dict]:
+def fetch_publications(max_items: int) -> List[Dict[str, Any]]:
+    pg = ProxyGenerator()
+    scholarly.use_proxy(pg)
     author = scholarly.search_author_id(AUTHOR_ID)
     author = scholarly.fill(author, sections=["publications"])
 
-    publications: list[dict] = []
-    seen_titles: set[str] = set()
-    for publication in author.get("publications", []):
-        filled = scholarly.fill(publication)
-        bib = filled.get("bib", {})
-        title = bib.get("title")
-        if not title or title in seen_titles:
-            continue
-        seen_titles.add(title)
+    publications: List[Dict[str, Any]] = []
+    for pub in author.get("publications", []):
+        try:
+            filled = scholarly.fill(pub)
+        except Exception:
+            filled = pub
+        normalized = _normalize_pub(filled)
+        if normalized["title"]:
+            publications.append(normalized)
 
-        venue = (
-            bib.get("journal")
-            or bib.get("venue")
-            or bib.get("conference")
-            or bib.get("publisher")
-            or ""
-        )
-        year = _coerce_year(bib.get("pub_year") or bib.get("year"))
-        publications.append({
-            "title": title,
-            "venue": venue,
-            "year": year,
-        })
-
-    publications.sort(key=lambda item: item.get("year") or 0, reverse=True)
-    return publications[:MAX_PUBLICATIONS]
-
-
-def write_publications(publications: list[dict]) -> None:
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with OUTPUT_PATH.open("w", encoding="utf-8") as file:
-        yaml.safe_dump(publications, file, sort_keys=False, allow_unicode=True)
+    publications.sort(key=_year_key, reverse=True)
+    if max_items:
+        publications = publications[:max_items]
+    return publications
 
 
 def main() -> int:
-    try:
-        publications = fetch_publications()
-    except Exception as exc:  # pragma: no cover - network/runtime issues
-        print(f"Error fetching publications: {exc}", file=sys.stderr)
-        return 1
+    parser = argparse.ArgumentParser(description="Update publications from Google Scholar.")
+    parser.add_argument("--output", default=DEFAULT_OUTPUT)
+    parser.add_argument("--max", type=int, default=50)
+    args = parser.parse_args()
 
-    if not publications:
-        print("No publications fetched.", file=sys.stderr)
-        return 1
+    publications = fetch_publications(args.max)
+    payload: List[Dict[str, Any]] = publications
 
-    write_publications(publications)
+    with open(args.output, "w", encoding="utf-8") as handle:
+        yaml.safe_dump(payload, handle, sort_keys=False, allow_unicode=False)
+
+    print(f"Wrote {len(publications)} publications to {args.output} on {dt.date.today().isoformat()}")
     return 0
 
 
