@@ -5,3 +5,4 @@ url: ""
 markdown: kramdown
 plugins:
   - jekyll-feed
+theme: null
