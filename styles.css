@@ -29,38 +29,6 @@ body {
     padding: 0 20px;
 }
 
-/* Header and Navigation */
-.site-header {
-    background: var(--white);
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.site-header nav ul {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-}
-
-.site-header nav ul li a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: color 0.2s;
-}
-
-.site-header nav ul li a:hover {
-    color: var(--secondary-color);
-}
-
 /* Hero Section */
 #hero {
     padding: 4rem 0;
