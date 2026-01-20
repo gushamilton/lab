@@ -119,3 +119,41 @@
   year: 2018
   url: https://doi.org/10.1016/j.jinf.2018.01.002
   description: "Systematic review/meta-analysis showing early warning scores have limited accuracy for sepsis mortality prediction."
+
+# 2026 / 2025 Papers (New)
+- title: "Determinants of respiratory tract aerosol generation in a diverse clinical population: an observational study"
+  venue: BMJ Open Respiratory Research
+  year: 2025
+  url: https://doi.org/10.1136/bmjresp-2025-003494
+  description: "AERATOR observational study identifying clinical and physiological factors associated with respiratory aerosol generation."
+
+# Selected Previous Papers (AERATOR)
+- title: "Aerosol generating procedures: are they of relevance for transmission of SARS-CoV-2?"
+  venue: The Lancet Respiratory Medicine
+  year: 2021
+  url: https://doi.org/10.1016/S2213-2600(21)00216-2
+  description: "AERATOR-led comment/debate challenging AGP classifications using emerging clinical aerosol data."
+
+- title: "Standard pleural interventions are not high-risk aerosol generating procedures"
+  venue: European Respiratory Journal
+  year: 2021
+  url: https://doi.org/10.1183/13993003.01064-2021
+  description: "AERATOR study showing common pleural procedures are not associated with high aerosol generation."
+
+- title: "Are aerosols generated during lung function testing in patients and healthy volunteers? Results from the AERATOR study"
+  venue: Thorax
+  year: 2022
+  url: https://doi.org/10.1136/thoraxjnl-2021-217671
+  description: "AERATOR measurements during spirometry/peak flow/FENO; supports de-listing standard lung function tests as AGPs with appropriate mitigation."
+
+- title: "Identification of the source events for aerosol generation during oesophago-gastro-duodenoscopy"
+  venue: Gut
+  year: 2022
+  url: https://doi.org/10.1136/gutjnl-2021-324588
+  description: "AERATOR work showing that patient events (not scope insertion/removal per se) drive aerosol peaks during OGD."
+
+- title: "Quantitative evaluation of aerosol generation during manual facemask ventilation"
+  venue: Anaesthesia
+  year: 2022
+  url: https://doi.org/10.1111/anae.15599
+  description: "AERATOR quantitative data suggesting facemask ventilation is not a high aerosol-generating procedure compared with cough/breathing baselines."
