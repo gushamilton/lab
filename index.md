@@ -45,6 +45,17 @@ which quantified aerosol generation during medical procedures.
 I have worked widely on trying to improve blood culture diagnostics, including thinking about pre-analytical pathways. It's kind remarkable how little we've changed blood culture diagnostics in the last 50 years...
 
 
+### Respiratory infection
+
+I have a real interest in respiratory infection, and have been working on an idea for a trial of aspirin for pneumonia since 2012, and eventually David Arnold led this to fruition with the ASPECT trial, due to complete 2026.
+
+I also work on RCTs and other studies in respiratory infection, including in pharmacokinetics of antibiotics in the pleural space. I am a quasi-official member of the [Academic Respiratory Unit](https://www.bristol.ac.uk/medicine/medicine/academic-respiratory-unit/), (I get invited to the Christmas drinks and lurk on the WhatsApp group). 
+
+
+### Pharmacokinetics of antimicrobials
+
+I work clinically at North Bristol, which houses both the national antimicrobial reference laboratory (ARL)[https://www.nbt.nhs.uk/severn-pathology/pathology-services/antimicrobial-reference-laboratory/bristol-centre-antimicrobial-research-evaluation/bcare-research] and [BCARE](https://www.nbt.nhs.uk/severn-pathology/pathology-services/antimicrobial-reference-laboratory/bristol-centre-antimicrobial-research-evaluation/bcare-research), which performs a number of in-vitro studies relating to pharmacodynamics and pharmacokinetics of infection. I am broadly interested in these studies, as in infection, pK strongly predicts future success (not like cancer, or other fields).
+
 ### Other stuff
 
 I find I spend a sort of depressingly large amount of time thinking about other things, quasi-unrelated to my research. THese usually involve computaitonal methods but could be economics, geography, AI, or whatever. 
