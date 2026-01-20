@@ -1,0 +1,17 @@
+- name: Fergus Hamilton
+  role: NIHR Clinical Lecturer
+  image: /profile.jpg
+  bio: Clinical academic focused on infection outcomes, genomics, and trials.
+  links:
+    - title: University Profile
+      url: https://research-information.bris.ac.uk/en/persons/fergus-hamilton
+    - title: GitHub
+      url: https://github.com/gushamilton
+
+- name: It could be you?
+  role: PhD Student / Postdoc
+  image: /assets/placeholder.svg
+  bio: We are looking for funded students or postdocs to join the lab.
+  links:
+    - title: Email Me
+      url: mailto:fergus.hamilton@bristol.ac.uk

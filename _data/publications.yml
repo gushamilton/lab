@@ -1,1 +1,91 @@
-[]
+# 2026 / 2025 Papers (New)
+- title: "Does piperacillin-tazobactam increase mortality risk compared to cefepime? Collider bias and the importance of assumptions in instrumental variable analyses"
+  venue: Clinical Infectious Diseases
+  year: 2025
+  url: https://doi.org/10.1093/cid/ciaf317
+  description: "Methodological study exploring why IV analyses can generate biased estimates in observational antibiotic studies."
+
+- title: "Revised analyses do not provide compelling evidence of any benefit of vitamin D"
+  venue: The American Journal of Clinical Nutrition
+  year: 2025
+  url: https://doi.org/10.1016/j.ajcnut.2025.09.001
+  description: "Re-analysis finding no strong evidence for vitamin D benefits in cardiovascular health."
+
+- title: "Mendelian randomisation and infection: pitfalls and promises"
+  venue: The Journal of Infectious Diseases
+  year: 2025
+  url: https://doi.org/10.1093/infdis/jiaf251
+  description: "Review of the opportunities and challenges of applying genetic methods to potential infectious disease targets."
+
+- title: "Non-linear mendelian randomization: evaluation of effect modification in the residual and doubly-ranked methods"
+  venue: European Journal of Epidemiology
+  year: 2025
+  url: https://doi.org/10.1007/s10654-025-01208-x
+  description: "Technical evaluation of methods for detecting non-linear genetic effects in epidemiological data."
+
+- title: "Altered IL-6 signalling and risk of tuberculosis–Authors’ reply"
+  venue: The Lancet Microbe
+  year: 2025
+  url: https://doi.org/10.1016/S2666-5247(25)00001-2
+  description: "Correspondence discussing the implications of our findings on IL-6 signalling and tuberculosis risk."
+
+- title: "Genetic evidence supports trialling IL-6 inhibition in influenza"
+  venue: Journal of Infection
+  year: 2025
+  url: https://doi.org/10.1016/j.jinf.2024.10.015
+  description: "Genetic analysis supporting IL-6 inhibition as a potential therapy for severe influenza."
+
+# Selected Previous Papers
+- title: "Altered IL-6 signalling and risk of tuberculosis: a multi-ancestry mendelian randomisation study"
+  venue: Lancet Microbe
+  year: 2024
+  url: https://doi.org/10.1016/S2666-5247(24)00162-9
+  description: "Extended genetic analysis of IL-6 signalling to tuberculosis across multiple ancestries."
+
+- title: "Non-linear Mendelian randomization: detection of biases using negative controls"
+  venue: Eur J Epi
+  year: 2024
+  url: https://doi.org/10.1007/s10654-024-01113-9
+  description: "Methodological work identifying major problems with a widely used genetic method for non-linear effects."
+
+- title: "Therapeutic potential of IL6R blockade for the treatment of sepsis and sepsis-related death"
+  venue: PLoS Med
+  year: 2023
+  url: https://doi.org/10.1371/journal.pmed.1004174
+  description: "Identified potential therapeutic benefit of IL-6 inhibition in sepsis using Mendelian randomisation."
+
+- title: "Low levels of small HDL particles predict but do not influence risk of sepsis"
+  venue: Critical Care
+  year: 2023
+  url: https://doi.org/10.1186/s13054-023-04589-1
+  description: "Identified the protective observational role of small HDL particles in sepsis, but found genetic analyses inconclusive."
+
+- title: "Variation in ERAP2 has opposing effects on severe respiratory infection and autoimmune disease"
+  venue: Am J Hum Genet
+  year: 2023
+  url: https://doi.org/10.1016/j.ajhg.2023.02.008
+  description: "Identified novel opposing effects of ERAP2 genetic variation on respiratory infection versus autoimmune disease."
+
+- title: "Aerosol emission from the respiratory tract: an analysis of aerosol generation from oxygen delivery systems"
+  venue: Thorax
+  year: 2022
+  url: https://doi.org/10.1136/thoraxjnl-2021-217577
+  description: "Key publication from the AERATOR study quantifying aerosol generation from oxygen systems."
+
+- title: "Patient outcomes after hospitalisation with COVID-19 and implications for follow-up"
+  venue: Thorax
+  year: 2021
+  url: https://doi.org/10.1136/thoraxjnl-2020-216086
+  description: "First UK description of long-COVID outcomes in hospitalised patients."
+
+- title: "Aspirin reduces cardiovascular events in patients with pneumonia"
+  venue: Eur Respir J
+  year: 2021
+  url: https://doi.org/10.1183/13993003.02795-2020
+  description: "Identified potential benefit of aspirin in pneumonia, leading to the ASPECT randomised trial."
+
+- title: "Symptoms After COVID-19 Vaccination in Patients With Persistent Symptoms After Acute Infection"
+  venue: Ann Intern Med
+  year: 2021
+  url: https://doi.org/10.7326/M21-1976
+  description: "Described potential positive effect of COVID-19 vaccination on long-COVID symptoms."

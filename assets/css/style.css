@@ -1,191 +1,322 @@
+/* Tufte-inspired Clean Academic Theme - With Margins */
+
 :root {
-  color-scheme: dark;
-  --bg: #0e0f11;
-  --bg-soft: #15171b;
-  --text: #f2f2f2;
-  --muted: #b7bcc4;
-  --accent: #9ad4ff;
-  --border: #2a2f36;
-  --shadow: rgba(0, 0, 0, 0.35);
+  --bg: #fffff8;
+  --text: #111;
+  --text-light: #555;
+  --accent: #E03E3E;
+  --border: #ddd;
+  --font-body: "Et-Book", "Palatino Linotype", "Palatino", "Georgia", "Times New Roman", serif;
+  --font-sans: "Inter", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+
+  /* Tufte Layout Vars */
+  --content-width: 55%;
+  --margin-width: 35%;
+  --full-width: 1200px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html,
 body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  /* Larger Tufte type */
+  line-height: 1.5;
   margin: 0;
   padding: 0;
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
-  background: radial-gradient(circle at top left, #12151b 0%, #0e0f11 45%, #0a0b0d 100%);
-  color: var(--text);
-  line-height: 1.6;
+  counter-reset: sidenote-counter;
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-
-.page {
-  min-height: 100vh;
-}
-
-.container {
-  width: min(960px, 90vw);
+/* Layout */
+.wrapper {
+  width: 85%;
+  max-width: var(--full-width);
   margin: 0 auto;
+  padding: 0 2rem;
+  padding-left: 5%;
+  /* Shift slightly right */
 }
 
-.section {
-  padding: 64px 0;
-  border-bottom: 1px solid var(--border);
+/* Main Content Area constrained to left side */
+.post-content,
+.post-header,
+.site-header .wrapper,
+.footer-content {
+  width: var(--content-width);
+  /* This creates the 'empty' space on the right for notes */
 }
 
-.section:last-of-type {
+/* Full width exceptions */
+.site-header {
+  width: 100%;
   border-bottom: none;
 }
 
-.header {
-  padding-top: 80px;
-  padding-bottom: 48px;
+.site-footer {
+  width: 100%;
 }
 
-.eyebrow {
-  text-transform: none;
-  letter-spacing: 0.12em;
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin: 0 0 12px;
+/* Margin Notes */
+.marginnote {
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  /* Push into the empty space */
+  width: 50%;
+  /* Width relative to the content column */
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+  vertical-align: baseline;
+  position: relative;
+  color: var(--text-light);
 }
 
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+
+.sidenote-number:after {
+  content: counter(sidenote-counter);
+  font-size: 1rem;
+  top: -0.5rem;
+  left: 0.1rem;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.sidenote {
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  width: 50%;
+  margin-top: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+  vertical-align: baseline;
+  position: relative;
+  color: var(--text-light);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+
+  .post-content,
+  .post-header,
+  .site-header .wrapper {
+    width: 100%;
+  }
+
+  .marginnote,
+  .sidenote {
+    float: none;
+    clear: both;
+    margin: 1rem 2rem;
+    width: auto;
+    display: block;
+    color: var(--text-light);
+  }
+}
+
+/* Typography */
 h1,
 h2,
 h3 {
-  margin: 0 0 16px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-weight: 400;
+  margin-top: 2rem;
+  line-height: 1.1;
 }
 
 h1 {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-size: 2.2rem;
+  font-style: italic;
+  margin-bottom: 2rem;
 }
 
 h2 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-top: 2rem;
 }
 
 h3 {
   font-size: 1.2rem;
-}
-
-.title {
-  font-size: 1.1rem;
-  color: var(--muted);
-  margin: 0 0 12px;
-}
-
-.lead {
-  font-size: 1.1rem;
-  max-width: 680px;
-  margin: 0;
-}
-
-.grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-.card {
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 16px 40px var(--shadow);
-}
-
-.card p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.pubs {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 16px;
-}
-
-.pub {
-  display: grid;
-  gap: 6px;
-  padding: 16px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: #121419;
-}
-
-.pub-title {
-  font-weight: 600;
-}
-
-.pub-venue,
-.pub-year {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.pub-link {
-  font-size: 0.9rem;
-  align-self: start;
-}
-
-.pub.empty {
-  color: var(--muted);
   font-style: italic;
 }
 
-.pubs-footer {
-  margin-top: 20px;
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
 }
 
-.contact {
+a:hover {
+  color: var(--accent);
+}
+
+/* Left Margin Note */
+.marginnote-left {
+  float: left;
+  clear: left;
+  margin-left: -60%;
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+  vertical-align: baseline;
+  position: relative;
+  color: var(--text-light);
+  text-align: right;
+  /* Text aligns to content */
+  padding-right: 1rem;
+}
+
+@media (max-width: 900px) {
+  .marginnote-left {
+    float: none;
+    clear: both;
+    margin: 1rem 2rem;
+    width: auto;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* Navigation */
+.site-header {
+  padding: 2rem 0;
+  font-family: var(--font-body);
+  /* Tufte serif */
+  font-size: 1.1rem;
+  /* Slightly larger for serif */
+}
+
+.site-header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.site-title {
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text);
+  padding-right: 2rem;
+  font-style: italic;
+  /* Tufte style title */
+}
+
+.site-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  /* Wider gap */
+  padding: 0;
+  margin: 0;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--text);
+  /* darker for visibility */
+  font-variant: small-caps;
+  /* Tufte-like header links */
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Figures / Full Width */
+.fullwidth {
+  width: 170%;
+  /* Extend into margin */
+  max-width: 100vw;
+}
+
+/* Team Grid */
+.grid {
   display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 3rem;
+  margin: 3rem 0;
+  width: 170%;
+  /* Break out into margin */
+  max-width: 90vw;
 }
 
-.contact p {
-  margin: 0 0 12px;
-}
-
-.recruitment {
-  padding: 16px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: #111319;
-  color: var(--muted);
-}
-
-.footer {
-  padding: 32px 0 48px;
-  text-align: center;
-  color: var(--muted);
-}
-
-@media (max-width: 600px) {
-  .section {
-    padding: 48px 0;
+@media (max-width: 900px) {
+  .grid {
+    width: 100%;
+    max-width: 100%;
   }
+}
 
-  .header {
-    padding-top: 64px;
-  }
+.card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.card:hover img {
+  filter: grayscale(0%);
+}
+
+
+/* If grid is inside content-width, it's narrow. 
+   Let's make team page full width? 
+   Or allow grid to expand. */
+.page-content.full-width-page .post-content {
+  width: 100%;
+}
+
+/* We simply won't restrict width generally, specific pages can override? 
+   For now, keep simple. Team grid in narrow column is okay if 2 cols. 
+*/
+
+/* Blog */
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-item {
+  margin-bottom: 1.5rem;
+}
+
+.post-meta {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.post-link {
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+/* Footer */
+.site-footer {
+  padding: 4rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: left;
+}
+
+.footer-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
 }

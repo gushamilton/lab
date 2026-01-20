@@ -1,0 +1,12 @@
+<header class="site-header">
+  <div class="wrapper">
+    <!-- <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | default: "Lab Website" }}</a> -->
+    <nav class="site-nav">
+      <ul>
+        {% for item in site.data.navigation %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
