@@ -1,7 +1,7 @@
 title: ""
 description: "Academic profile, research highlights, and recent publications."
 baseurl: "/lab"
-url: ""
+url: "https://gushamilton.github.io"
 markdown: kramdown
 plugins:
   - jekyll-feed
