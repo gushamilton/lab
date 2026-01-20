@@ -1,6 +1,6 @@
-title: "Fergus Hamilton"
+title: ""
 description: "Academic profile, research highlights, and recent publications."
-baseurl: ""
+baseurl: "/lab"
 url: ""
 markdown: kramdown
 plugins:
