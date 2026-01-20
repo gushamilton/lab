@@ -9,7 +9,8 @@ I just list publications if I can be bothered to update the website and only lis
 
 <div class="pubs-list">
   {% assign current_year = "" %}
-  {% for pub in site.data.publications %}
+  {% assign sorted_pubs = site.data.publications | sort: 'year' | reverse %}
+  {% for pub in sorted_pubs %}
     {% if pub.year != current_year %}
       {% assign current_year = pub.year %}
       <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">{{ current_year }}</h3>

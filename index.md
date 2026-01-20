@@ -24,10 +24,7 @@ I also am very interested in developing and testing novel trial methodologies, s
 
 ### Statistical genetics (and other stats stuff)
 I focus on the development of new statistical methodologies to analyze high-dimensional genetic data. My work utilizes
-novel methods in Mendelian randomization and genetic epidemiology to investigate causal drivers of disease. <span class="marginnote"><strong>Why genetic epi of infection?</strong><br>Infection is highly heritable - in that historically it has been a major driver of selection, and most modern data (notably from malaria and COVID-19) have found that people who have certain genetic variants are more likely to have worse outcomes. This is remarkably understudied in most infections compared to other traits. 
-
-Remarkably, we also know that these genetic variants can predict clinical trial success - that is, we can use the information we gain from genetic studies to identify the apppropriate drug targets.
-</span>
+novel methods in Mendelian randomization and genetic epidemiology to investigate causal drivers of disease. <span class="marginnote"><strong>Why genetic epi of infection?</strong><br>Infection is highly heritable - in that historically it has been a major driver of selection, and most modern data (notably from malaria and COVID-19) have found that people who have certain genetic variants are more likely to have worse outcomes. This is remarkably understudied in most infections compared to other traits.<br><br>Remarkably, we also know that these genetic variants can predict clinical trial success - that is, we can use the information we gain from genetic studies to identify the apppropriate drug targets.</span>
 
 
 I am particularly interested in integrating new methods to analyse infection data at scale. This data is a complete mess, 
@@ -54,7 +51,7 @@ I also work on RCTs and other studies in respiratory infection, including in pha
 
 ### Pharmacokinetics of antimicrobials
 
-I work clinically at North Bristol, which houses both the national antimicrobial reference laboratory (ARL)[https://www.nbt.nhs.uk/severn-pathology/pathology-services/antimicrobial-reference-laboratory/bristol-centre-antimicrobial-research-evaluation/bcare-research] and [BCARE](https://www.nbt.nhs.uk/severn-pathology/pathology-services/antimicrobial-reference-laboratory/bristol-centre-antimicrobial-research-evaluation/bcare-research), which performs a number of in-vitro studies relating to pharmacodynamics and pharmacokinetics of infection. I am broadly interested in these studies, as in infection, pK strongly predicts future success (not like cancer, or other fields).
+I work clinically at North Bristol, which houses both the national antimicrobial reference laboratory [ARL](https://www.nbt.nhs.uk/severn-pathology/pathology-services/antimicrobial-reference-laboratory/bristol-centre-antimicrobial-research-evaluation/bcare-research) and [BCARE](https://www.nbt.nhs.uk/severn-pathology/pathology-services/antimicrobial-reference-laboratory/bristol-centre-antimicrobial-research-evaluation/bcare-research), which performs a number of in-vitro studies relating to pharmacodynamics and pharmacokinetics of infection. I am broadly interested in these studies, as in infection, pK strongly predicts future success (not like cancer, or other fields).
 
 ### Other stuff
 
