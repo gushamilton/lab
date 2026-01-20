@@ -104,22 +104,77 @@ body {
 }
 
 /* Mobile Responsiveness */
+/* Mobile Responsiveness */
 @media (max-width: 900px) {
+  .wrapper {
+    width: 90%;
+    padding: 0 1rem;
+    padding-left: 1rem;
+  }
 
   .post-content,
   .post-header,
-  .site-header .wrapper {
+  .site-header .wrapper,
+  .footer-content {
     width: 100%;
   }
 
+  /* Reset margin notes to be hidden by default on mobile */
   .marginnote,
-  .sidenote {
+  .sidenote,
+  .marginnote-left {
     float: none;
     clear: both;
-    margin: 1rem 2rem;
-    width: auto;
-    display: block;
+    margin: 1rem 0;
+    width: 100%;
+    display: none;
+    /* Hidden until toggled */
     color: var(--text-light);
+    text-align: left;
+    padding-right: 0;
+
+    /* Box style when visible */
+    background: #fdfdfd;
+    padding: 1rem;
+    border-left: 3px solid var(--accent);
+    font-size: 0.95rem;
+  }
+
+  /* Visible state toggled by JS */
+  .marginnote.visible,
+  .sidenote.visible,
+  .marginnote-left.visible {
+    display: block;
+  }
+
+  /* Toggle Button Styles */
+  .margin-toggle-button {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 0 0.3rem;
+    line-height: 1;
+    vertical-align: middle;
+    user-select: none;
+  }
+
+  .margin-toggle-button.active {
+    color: var(--text);
+  }
+
+  /* Adjust Grid */
+  .grid {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Hide toggle button on desktop */
+@media (min-width: 901px) {
+  .margin-toggle-button {
+    display: none;
   }
 }
 
@@ -177,16 +232,7 @@ a:hover {
   padding-right: 1rem;
 }
 
-@media (max-width: 900px) {
-  .marginnote-left {
-    float: none;
-    clear: both;
-    margin: 1rem 2rem;
-    width: auto;
-    display: block;
-    text-align: left;
-  }
-}
+
 
 /* Navigation */
 .site-header {
@@ -217,9 +263,10 @@ a:hover {
   display: flex;
   list-style: none;
   gap: 1.5rem;
-  /* Wider gap */
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
+  /* Allow wrapping on small screens */
 }
 
 .site-nav a {
