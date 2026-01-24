@@ -282,6 +282,14 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Post Images - constrained to content width */
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+}
+
 /* Figures / Full Width */
 .fullwidth {
   width: 170%;
