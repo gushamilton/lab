@@ -231,6 +231,29 @@ a:hover {
   padding-right: 1rem;
 }
 
+/* Medium screens: hide left margin notes (not enough space) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .marginnote-left {
+    float: none;
+    clear: both;
+    margin: 1rem 0;
+    margin-left: 0;
+    width: 100%;
+    display: none;
+    color: var(--text-light);
+    text-align: left;
+    padding-right: 0;
+    background: #fdfdfd;
+    padding: 1rem;
+    border-left: 3px solid var(--accent);
+    font-size: 0.95rem;
+  }
+
+  .marginnote-left.visible {
+    display: block;
+  }
+}
+
 
 
 /* Navigation */
