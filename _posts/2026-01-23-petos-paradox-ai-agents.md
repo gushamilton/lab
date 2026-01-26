@@ -57,11 +57,11 @@ Second, there is a distinct gap between human and artificial reliability. When f
 
 In fact, there is no correlation between model size and $k$ at all, although lambda clearly decreases with larger, more powerful models. So basically, larger models exhibit lower error rates, but they don’t seem to intrinsically get better over time, like humans do.
 
-![Figure 2: Lambda by Model]({{ '/assets/images/Figure2.png' | relative_url }})
 <span class="marginnote">Figure 2: Lambda: i.e. hazard rate for each model. Humans are the best (lowest hazard), but the frontier models have orders of magnitude lower hazard than the older models.</span>
+![Figure 2: Lambda by Model]({{ '/assets/images/Figure2.png' | relative_url }})
 
+<span class="marginnote">Figure 3: Although overall hazard drops with accuracy of the model, K doesn't appear to correlate strongly. This is a bit weird!</span>
 ![Figure 3: Hazard vs Accuracy]({{ '/assets/images/Figure3.png' | relative_url }})
-<span class="marginnote">Figure 3: Although overall hazard drops with accuracy of the model, K doesn’t appear to correlate strongly. This is a bit weird!</span>
 
 <span class="sidenote">It’s important to recognise that we are estimating two correlated parameters here, with limited data. The potential for overfitting is high. I did a number of things to avoid this, but I think we have to acknowledge that these estimates are based on limited data, particularly for earlier models that just fail right at the start.</span>
 This is a bit weird, and I don’t want to overplay it, but it sort of suggests that the ability to reduce hazard over time is not an intrinsic property of model size or scaling, and might not naturally increase like the reduction in error rate.
@@ -72,18 +72,18 @@ Although it’s nice to produce these plots; the obvious question is whether the
 
 This occurs because the model fits in the middle of the data with these approaches are nearly identical. They fit the median performance almost perfectly, and accurately estimating at the tails requires lots of data. You can just about see this at the end of this plot of GPT-4o here, where the relative difference between the Logistic and Weibull model in success at 103 minutes is actually extreme on a relative scale.
 
-![Figure 4: Model Fit GPT4o]({{ '/assets/images/Figure4.png' | relative_url }})
 <span class="marginnote">Figure 4: Model fit for GPT4o. Red represents the Weibull plot, blue represents the logistic plot. Each dot is a task.</span>
+![Figure 4: Model Fit GPT4o]({{ '/assets/images/Figure4.png' | relative_url }})
 
 It’s even more obvious for humans that the tail diverges:
 
-![Figure 5: Model Fit Humans]({{ '/assets/images/Figure5.png' | relative_url }})
 <span class="marginnote">Figure 5: Model fit for Humans (assuming caption similarity to Fig 4 but for Humans). Red represents the Weibull plot, blue represents the logistic plot. Each dot is a task.</span>
+![Figure 5: Model Fit Humans]({{ '/assets/images/Figure5.png' | relative_url }})
 
 One way to understand this is if we calculate the horizon ratio, which represents the estimated horizon time for the logistic model at a given probability of success, this is basically equal between the models at moderate p’s (20%-80%), but becomes extreme at the tails: at 99.9% success, the Weibull model’s time horizon is 10x shorter than the logistic, while at 99.9% it’s 100x shorter.
 
-![Figure 6: Horizon Ratio]({{ '/assets/images/Figure6.png' | relative_url }})
 <span class="marginnote">Figure 6: Horizon ratio (e.g. multiplicative difference between Weibull and logistic models in the length of time an agent can run at a given % success).</span>
+![Figure 6: Horizon Ratio]({{ '/assets/images/Figure6.png' | relative_url }})
 
 This clearly has quite important implications for the future of AI agents if the Weibull model is true: there is a much much longer tail of failure, and a much greater capacity of models required to reduce hazard over time to achieve success at extremely easy tasks.<span class="sidenote">One way to solve this would also be to collect lots of data on easy tasks that we should expect almost universal success. There are two issues, firstly, tasks are qualitatively different between short and long, which means the short tail might not reflect the long tail. Secondly, we still need to do it a lot to get power! If failure rates are say 0.01% with the Weibull model, and 0.01% with the logistic model, to detect a difference, we would need >2-20,000 tasks (ideally somewhat independent of each other [depending on your exact hypothesis]).</span>
 
