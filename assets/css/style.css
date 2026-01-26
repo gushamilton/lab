@@ -33,12 +33,11 @@ body {
 
 /* Layout */
 .wrapper {
-  width: 85%;
+  width: 90%;
   max-width: var(--full-width);
   margin: 0 auto;
   padding: 0 2rem;
-  padding-left: 5%;
-  /* Shift slightly right */
+  /* Centered to allow both left and right margin notes */
 }
 
 /* Main Content Area constrained to left side */
