@@ -6,7 +6,7 @@ date: 2026-01-23
 
 ## Introduction
 
-Richard Peto observed an interesting paradox. He noted that cancer incidence does not scale linearly with body size or lifespan. A blue whale has a thousand times more cells than a human and lives significantly longer, yet it does not succumb to cancer at a thousand times the rate. If it did, it would die before reaching maturity.
+[Richard Peto](https://en.wikipedia.org/wiki/Peto%27s_paradox) observed an interesting paradox. He noted that cancer incidence does not scale linearly with body size or lifespan. A blue whale has a thousand times more cells than a human and lives significantly longer, yet it does not succumb to cancer at a thousand times the rate. If it did, it would die before reaching maturity.
 
 The (probable) solution to the paradox is that large, long-lived mammals have evolved superior error-correction mechanisms. Effectively, they have suppressed their cellular hazard rate to survive the "long task" of a multi-century life (this is very much an ongoing debate, I simplify).
 
@@ -14,7 +14,7 @@ I believe the future of AI agents may be analogous to this paradox, or at least 
 
 ## The current state of evaluation
 
-The current standard for measuring agentic capability comes from METR. Their team has developed a comprehensive suite of software engineering and reasoning tasks, each with an estimated human completion time. They run models against these tasks and fit the results to a logistic regression curve.<span class="sidenote">One major issue is that "task difficulty" and "human time" are basically the same thing in the available data. These are strongly correlated. So when we say, "50% success at time point X," we are essentially also making a statement about 50% success at difficult tasks. This is obviously a bit of a challenge, as some tasks are very long but not difficult, and difficulty might be quite different for a human and a model. So I use the term "task time/difficulty" throughout the blog, as we can't really know exactly what this means.</span>
+The current standard for measuring agentic capability comes from [METR](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/). Their team has developed a comprehensive suite of software engineering and reasoning tasks, each with an estimated human completion time. They run models against these tasks and fit the results to a logistic regression curve.<span class="sidenote">One major issue is that "task difficulty" and "human time" are basically the same thing in the available data. These are strongly correlated. So when we say, "50% success at time point X," we are essentially also making a statement about 50% success at difficult tasks. This is obviously a bit of a challenge, as some tasks are very long but not difficult, and difficulty might be quite different for a human and a model. So I use the term "task time/difficulty" throughout the blog, as we can't really know exactly what this means.</span>
 
 This approach implicitly assumes that task difficulty scales symmetrically. The model produces a smooth "S-curve" of probability, suggesting that moving from 10% to 50% success is roughly as difficult as moving from 50% to 90%. METR uses these fits to report headline figures, such as the time horizon at which a model achieves a 50% pass rate ($T_{50}$).<span class="marginnote-left">Logistic regression is a totally reasonable modelling assumption here. It fits the data pretty well, and it's been widely used in the field. I'm not criticising METR here for this choice; it's just that it has a number of implicit assumptions that perhaps don't hold.</span>
 
@@ -26,13 +26,13 @@ So, if a model has a 90% success at a task lasting 1hr, and a 50% chance at a ta
 
 This feels… mechanistically implausible. It is highly likely that achieving success at tasks lasting 2 days is qualitatively different to tasks lasting 2hrs. First, there is the problem of the strong correlation of task difficulty and length, but secondly, in many other fields, we know that going from 99.9 -> 99.99% is a huge jump. It is worth thinking about alternative model views.
 
-Toby Ord recently re-analysed the METR data and proposed a different interpretation. He noted that a logistic fit is essentially a psychometric tool—it measures difficulty—but it may not capture the dynamics of an agent acting over time. He instead fitted a "constant hazard" model, akin to radioactive decay.
+[Toby Ord](https://tobyord.com/half-life) recently re-analysed the METR data and proposed a different interpretation. He noted that a logistic fit is essentially a psychometric tool—it measures difficulty—but it may not capture the dynamics of an agent acting over time. He instead fitted a "constant hazard" model, akin to radioactive decay.
 
 In Ord’s view, the probability of success decays exponentially with task length. This is a profound shift in perspective. It implies that "long" tasks are disproportionately more difficult than "short" ones. Achieving 99% reliability is not just a linear step up from 90%; it requires orders of magnitude more robustness. However, Ord’s model assumes the hazard rate is flat—that an agent is just as likely to crash in minute 60 as it was in minute 1. This produces very different estimates at extremes of time / task difficulty for robustness, and proposes a more pessimistic view.
 
 ## Hazards are never constant
 
-This also feels slightly implausible. In many other fields, hazards are not at all proportional. If we go back to Peto’s paradox: we know that between species, hazards are not proportional, and we also know from life, that people are much more likely to die in infancy, then if they survive, they have a long period of very low hazard until they get old.<span class="sidenote">This has been shown in a neat paper recently by Judith Glynn and Paul Moss reviewing a bunch of historic data across a wide range of infections: nearly all infection appears to have a J-shaped curve with mortality.</span>
+This also feels slightly implausible. In many other fields, hazards are not at all proportional. If we go back to Peto’s paradox: we know that between species, hazards are not proportional, and we also know from life, that people are much more likely to die in infancy, then if they survive, they have a long period of very low hazard until they get old.<span class="sidenote">This has been shown in a neat paper recently by [Judith Glynn and Paul Moss](https://www.nature.com/articles/s41597-020-00668-y) reviewing a bunch of historic data across a wide range of infections: nearly all infection appears to have a J-shaped curve with mortality.</span>
 
 This is in fact very easy to model. We can model with the Weibull distribution, which allows the risk to change over time. This introduces a shape parameter, $k$, alongside lambda ($\lambda$), the scale parameter. Lambda represents the average hazard or basic error rate. However, $k$ modifies the error rate over time.
 
@@ -44,7 +44,7 @@ This feels, to me, like a more reasonable mechanistic vision for how agentic tas
 
 ## Methods and results
 
-I fitted two parametric survival models—logistic and Weibull—to the task data for frontier models released. I used Bayesian Information Criterion (BIC) to compare the fits and validated the findings using a hierarchical Bayesian model to estimate the posterior distributions of the parameters. All the code is here. There are a bunch of secondary analyses.
+I fitted two parametric survival models—logistic and Weibull—to the task data for frontier models released. I used Bayesian Information Criterion (BIC) to compare the fits and validated the findings using a hierarchical Bayesian model to estimate the posterior distributions of the parameters. All the code is [here](https://github.com/gushamilton). There are a bunch of secondary analyses.
 
 There are three major findings.
 
