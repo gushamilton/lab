@@ -7,7 +7,7 @@ date: 2026-01-23
 
 *23 January 2026*
 
-> **3rd Feb update:** New METR data released. I reran all plots, including Claude Opus. No real changes to findings—both logistic and Weibull fits are pretty similar. One interesting finding is that the hazard parameters (κ) of GPT-5 and Opus now seem to be similar to humans, but the lambda is still lower in humans, suggesting that humans are able to error-correct better if we think these models are the best fit.
+> **3rd Feb update:** New METR data released. I reran all plots, including Claude Opus. No real changes to findings—both logistic and Weibull fits are pretty similar. One interesting finding is that the lambda (λ) of GPT-5 and Opus now seems to be similar to humans, but the kappa is still lower in humans, suggesting that humans are able to error-correct better if we think these models are the best fit.
 
 ## Introduction
 
