@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Peto's Paradox and the Future of AI Agents"
+description: "Analysis of AI agent reliability using survival models. Re-examining METR's task data with Weibull distributions reveals insights about long-horizon AI autonomy."
 date: 2026-01-23
 ---
 

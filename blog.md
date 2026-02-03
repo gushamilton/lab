@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Blog
+description: "Blog posts on research, statistics, AI, and clinical epidemiology from Fergus Hamilton."
 ---
 
 <ul class="post-list">

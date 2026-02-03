@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About Me
+description: "About Fergus Hamilton - clinical academic in Bristol working on infectious disease and microbiology."
 ---
 
 I live in Bristol with my wife and two children. I do my clinical work at North Bristol NHS Trust and University Hospitals Bristol and Weston NHS Foundation Trust, where I consult on the microbiology service (and occasionally do a bit of ID)

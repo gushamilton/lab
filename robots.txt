@@ -1,0 +1,6 @@
+# Robots.txt for Fergus Hamilton Lab Website
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://gushamilton.github.io/lab/sitemap.xml

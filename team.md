@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Team
+description: "Meet the research team at Fergus Hamilton's lab."
 ---
 
 <div class="grid">

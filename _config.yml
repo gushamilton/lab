@@ -1,9 +1,13 @@
-title: ""
-description: "Academic profile, research highlights, and recent publications."
+title: "Fergus Hamilton"
+description: "Academic profile, research highlights, and recent publications from Fergus Hamilton - NIHR Clinical Lecturer in Aetiological Epidemiology at Bristol."
+author:
+  name: "Fergus Hamilton"
+  twitter: "gabormadarasz" # Update this to your actual Twitter handle
 baseurl: "/lab"
 url: "https://gushamilton.github.io"
 markdown: kramdown
 permalink: pretty
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 theme: null
