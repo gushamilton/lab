@@ -7,6 +7,8 @@ date: 2026-01-23
 
 *23 January 2026*
 
+> **3rd Feb update:** New METR data released. I reran all plots, including Claude Opus. No real changes to findings—both logistic and Weibull fits are pretty similar. One interesting finding is that the hazard parameters (κ) of GPT-5 and Opus now seem to be similar to humans, but the lambda is still lower in humans, suggesting that humans are able to error-correct better if we think these models are the best fit.
+
 ## Introduction
 
 [Richard Peto](https://en.wikipedia.org/wiki/Peto%27s_paradox) observed an interesting paradox. He noted that cancer incidence does not scale linearly with body size or lifespan. A blue whale has a thousand times more cells than a human and lives significantly longer, yet it does not succumb to cancer at a thousand times the rate. If it did, it would die before reaching maturity.
